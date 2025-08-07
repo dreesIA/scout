@@ -7,7 +7,7 @@ import json
 
 # Page configuration
 st.set_page_config(
-    page_title="Soccer Scout Pro",
+    page_title="Swarm Scout Pro",
     page_icon="⚽",
     layout="wide",
     initial_sidebar_state="expanded"

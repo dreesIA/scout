@@ -435,7 +435,7 @@ players_df = load_players_data()
 teams_df = load_teams_data()
 
 # Header
-st.title("⚽ Soccer Scout Pro")
+st.title("⚽ Swarm Scout Pro")
 st.markdown("**Multi-source scouting data from USL League One, USL Championship, and MLS**")
 
 # Sidebar

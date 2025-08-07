@@ -8,7 +8,7 @@ import json
 # Page configuration
 st.set_page_config(
     page_title="Swarm Scout Pro",
-    page_icon="⚽",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -435,12 +435,12 @@ players_df = load_players_data()
 teams_df = load_teams_data()
 
 # Header
-st.title("⚽ Swarm Scout Pro")
+st.title("Swarm Scout Pro")
 st.markdown("**Multi-source scouting data from USL League One, USL Championship, and MLS**")
 
 # Sidebar
 with st.sidebar:
-    st.header("🔍 Filters")
+    st.header("Filters")
     
     # League filter
     league_filter = st.selectbox(
@@ -486,16 +486,16 @@ with st.sidebar:
     st.divider()
     
     # Sync button
-    if st.button("🔄 Sync Data", use_container_width=True):
+    if st.button("Sync Data", use_container_width=True):
         st.info("Data sync functionality would connect to FBref, Transfermarkt, ASA, and Sofascore APIs")
 
 # Main content
-tab1, tab2, tab3 = st.tabs(["📊 Players", "🏟️ Teams", "⭐ Watchlist"])
+tab1, tab2, tab3 = st.tabs(["Players", "Teams", "Watchlist"])
 
 # Players Tab
 with tab1:
     # Search bar
-    search_query = st.text_input("🔍 Search players or clubs...", placeholder="Enter player or club name")
+    search_query = st.text_input("Search players or clubs...", placeholder="Enter player or club name")
     
     # Apply filters
     filtered_df = players_df.copy()
@@ -664,7 +664,7 @@ with tab2:
 # Watchlist Tab
 with tab3:
     if len(st.session_state.watchlist) == 0:
-        st.info("⭐ Your watchlist is empty. Add players from the Players tab to track them here.")
+        st.info("Your watchlist is empty. Add players from the Players tab to track them here.")
     else:
         watchlist_players = players_df[players_df['id'].isin(st.session_state.watchlist)]
         
@@ -702,7 +702,7 @@ with tab3:
             st.divider()
         
         # Export watchlist
-        if st.button("📥 Export Watchlist to CSV"):
+        if st.button("Export Watchlist to CSV"):
             csv = watchlist_players.to_csv(index=False)
             st.download_button(
                 label="Download CSV",
